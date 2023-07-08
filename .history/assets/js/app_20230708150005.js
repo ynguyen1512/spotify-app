@@ -21,14 +21,12 @@ const volumeIcon = document.querySelector(".volume-icon");
 const volumeProgress = document.querySelector("#progress-music");
 const sidebarTabs = document.querySelector(".features__item");
 const randomBtn =  document.querySelector(".random-btn");
-const repeatBtn = document.querySelector(".repeat-btn");
-const $ = document.querySelector.bind(document);
-const $$ = document.querySelectorAll.bind(document);
+const repeatBtn = document.querySelector(".repeat-btn")
 
-const tabs = document.querySelectorAll(".features__item");
-const panes = document.querySelectorAll(".tab-pane");
-const homeBtn = document.querySelector(".menu__heading");
-const right = document.querySelector(".right");
+const tabs = $$(".features__item");
+const panes = $$(".tab-pane");
+const homeBtn = $(".menu__heading");
+const right = $(".right");
 let isPlaying = true;
 let indexSong = 0;
 
@@ -37,7 +35,6 @@ const app = {
   isMute: false,
   volume: 100,
   isRandom: false,
-  isRepeat: false,
   artists: [
     {
       name: "Song Luân",
@@ -207,15 +204,9 @@ const app = {
       }
     };
 
-    // Random song
-    randomBtn.onclick = function() {
+    randomBtn.onclick = function(e) {
       _this.isRandom =!_this.isRandom;
       randomBtn.classList.toggle("gray-filtered", _this.isRandom)
-  }
-  // Repeat Song
-  repeatBtn.onclick = function() {
-    _this.isRepeat =!_this.isRepeat;
-    repeatBtn.classList.toggle("gray-filtered", _this.isRepeat)
   }
 
     // when process of song is changed
@@ -275,16 +266,6 @@ const app = {
       audio.currentTime = seekTime;
     };
 
-    // Handle when ended song
-    audio.onended = function () {
-      if(_this.isRepeat) {
-        audio.play()
-      }
-      else  {
-        nextBtn.click()
-      }
-    }
-
     // if (window.location.pathname === "/artist.html") {
     //   artistInfoBtn.onclick = function () {
     //     // Render artist info and call the function
@@ -293,9 +274,9 @@ const app = {
     //   };
     // }
 
-    // songOption.onclick = function (e) {
-    //   console.log("Hello");
-    // };
+    songOption.onclick = function (e) {
+      console.log("Hello");
+    };
   },
   playRandomSong: function() {
     let newIndex;

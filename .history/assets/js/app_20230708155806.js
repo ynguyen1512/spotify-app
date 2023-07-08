@@ -37,7 +37,6 @@ const app = {
   isMute: false,
   volume: 100,
   isRandom: false,
-  isRepeat: false,
   artists: [
     {
       name: "Song Luân",
@@ -213,10 +212,9 @@ const app = {
       randomBtn.classList.toggle("gray-filtered", _this.isRandom)
   }
   // Repeat Song
-  repeatBtn.onclick = function() {
-    _this.isRepeat =!_this.isRepeat;
-    repeatBtn.classList.toggle("gray-filtered", _this.isRepeat)
-  }
+  // repeatBtn.onclick = function() {
+  //   alert("Hello")
+  // }
 
     // when process of song is changed
     audio.ontimeupdate = function () {
@@ -275,16 +273,6 @@ const app = {
       audio.currentTime = seekTime;
     };
 
-    // Handle when ended song
-    audio.onended = function () {
-      if(_this.isRepeat) {
-        audio.play()
-      }
-      else  {
-        nextBtn.click()
-      }
-    }
-
     // if (window.location.pathname === "/artist.html") {
     //   artistInfoBtn.onclick = function () {
     //     // Render artist info and call the function
@@ -297,17 +285,17 @@ const app = {
     //   console.log("Hello");
     // };
   },
-  playRandomSong: function() {
-    let newIndex;
-    do{
-      newIndex = Math.floor(Math.random() * this.songs.length)
-    }
-    while(newIndex === this.currentIndex)
+  // playRandomSong: function() {
+  //   let newIndex;
+  //   do{
+  //     newIndex = Math.floor(Math.random() * this.songs.length)
+  //   }
+  //   while(newIndex === this.currentIndex)
 
-    this.currentIndex = newIndex;
-    this.loadCurrentSong()
-  }
-  ,
+  //   this.currentIndex = newIndex;
+  //   this.loadCurrentSong()
+  // }
+  // ,
   showPanel(panelIndex, colorCode) {
     tabButtons.forEach(function (node) {
       node.style.backgroundColor = "";

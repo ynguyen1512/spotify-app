@@ -37,7 +37,6 @@ const app = {
   isMute: false,
   volume: 100,
   isRandom: false,
-  isRepeat: false,
   artists: [
     {
       name: "Song Luân",
@@ -213,10 +212,9 @@ const app = {
       randomBtn.classList.toggle("gray-filtered", _this.isRandom)
   }
   // Repeat Song
-  repeatBtn.onclick = function() {
-    _this.isRepeat =!_this.isRepeat;
-    repeatBtn.classList.toggle("gray-filtered", _this.isRepeat)
-  }
+  // repeatBtn.onclick = function() {
+  //   alert("Hello")
+  // }
 
     // when process of song is changed
     audio.ontimeupdate = function () {
@@ -274,16 +272,6 @@ const app = {
       const seekTime = (audio.duration / 100) * e.target.value;
       audio.currentTime = seekTime;
     };
-
-    // Handle when ended song
-    audio.onended = function () {
-      if(_this.isRepeat) {
-        audio.play()
-      }
-      else  {
-        nextBtn.click()
-      }
-    }
 
     // if (window.location.pathname === "/artist.html") {
     //   artistInfoBtn.onclick = function () {

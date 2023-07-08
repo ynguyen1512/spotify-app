@@ -28,7 +28,7 @@ const $$ = document.querySelectorAll.bind(document);
 const tabs = document.querySelectorAll(".features__item");
 const panes = document.querySelectorAll(".tab-pane");
 const homeBtn = document.querySelector(".menu__heading");
-const right = document.querySelector(".right");
+const right = $(".right");
 let isPlaying = true;
 let indexSong = 0;
 
@@ -37,7 +37,6 @@ const app = {
   isMute: false,
   volume: 100,
   isRandom: false,
-  isRepeat: false,
   artists: [
     {
       name: "Song Luân",
@@ -182,11 +181,11 @@ const app = {
       audio.src = _this.currentSong.path;
       audio.play();
       playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
-      if(_this.isRandom){
-        _this.playRandomSong()
-      }else {
-        audio.play();
-      }
+      // if(_this.isRandom){
+      //   _this.playRandomSong()
+      // }else {
+      //   audio.play();
+      // }
     };
 
     prevBtn.onclick = function () {
@@ -200,23 +199,22 @@ const app = {
       audio.src = _this.currentSong.path;
       audio.play();
       playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
-      if(_this.isRandom){
-        _this.playRandomSong()
-      }else {
-        audio.play();
-      }
+      // if(_this.isRandom){
+      //   _this.playRandomSong()
+      // }else {
+      //   audio.play();
+      // }
     };
 
     // Random song
-    randomBtn.onclick = function() {
-      _this.isRandom =!_this.isRandom;
-      randomBtn.classList.toggle("gray-filtered", _this.isRandom)
-  }
+  //   randomBtn.onclick = function() {
+  //     _this.isRandom =!_this.isRandom;
+  //     randomBtn.classList.toggle("gray-filtered", _this.isRandom)
+  // }
   // Repeat Song
-  repeatBtn.onclick = function() {
-    _this.isRepeat =!_this.isRepeat;
-    repeatBtn.classList.toggle("gray-filtered", _this.isRepeat)
-  }
+  // repeatBtn.onclick = function() {
+  //   alert("Hello")
+  // }
 
     // when process of song is changed
     audio.ontimeupdate = function () {
@@ -275,16 +273,6 @@ const app = {
       audio.currentTime = seekTime;
     };
 
-    // Handle when ended song
-    audio.onended = function () {
-      if(_this.isRepeat) {
-        audio.play()
-      }
-      else  {
-        nextBtn.click()
-      }
-    }
-
     // if (window.location.pathname === "/artist.html") {
     //   artistInfoBtn.onclick = function () {
     //     // Render artist info and call the function
@@ -297,17 +285,17 @@ const app = {
     //   console.log("Hello");
     // };
   },
-  playRandomSong: function() {
-    let newIndex;
-    do{
-      newIndex = Math.floor(Math.random() * this.songs.length)
-    }
-    while(newIndex === this.currentIndex)
+  // playRandomSong: function() {
+  //   let newIndex;
+  //   do{
+  //     newIndex = Math.floor(Math.random() * this.songs.length)
+  //   }
+  //   while(newIndex === this.currentIndex)
 
-    this.currentIndex = newIndex;
-    this.loadCurrentSong()
-  }
-  ,
+  //   this.currentIndex = newIndex;
+  //   this.loadCurrentSong()
+  // }
+  // ,
   showPanel(panelIndex, colorCode) {
     tabButtons.forEach(function (node) {
       node.style.backgroundColor = "";

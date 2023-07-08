@@ -275,16 +275,6 @@ const app = {
       audio.currentTime = seekTime;
     };
 
-    // Handle when ended song
-    audio.onended = function () {
-      if(_this.isRepeat) {
-        audio.play()
-      }
-      else  {
-        nextBtn.click()
-      }
-    }
-
     // if (window.location.pathname === "/artist.html") {
     //   artistInfoBtn.onclick = function () {
     //     // Render artist info and call the function

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/login.css" />
+    <!-- Favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <!-- favicons -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+    <title>Login</title>
+  </head>
+  <body>
+    <a href="./index.html">
+      <img
+        class="main-logo"
+        src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png"
+      />
+    </a>
+
+    <div class="main"></div>
+
+    <form onsubmit="login()">
+      <div class="logo">
+        <img
+          src="https://storage.googleapis.com/pr-newsroom-wp/1/2018/11/Spotify_Logo_CMYK_Green.png"
+        />
+      </div>
+
+      <div class="sign-box">
+        <a href="./login.html">log in</a>
+        <a href="./signup.html">sign up</a>
+      </div>
+
+      <span id="msg"></span>
+
+      <input
+        type="name"
+        id="username"
+        placeholder="Username"
+        class="inp-Box name"
+      />
+
+      <br />
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Password"
+        class="inp-Box psd"
+      />
+
+      <br />
+
+      <div class="check">
+        <input type="checkbox" id="check" />
+        <label for="check" id="checkMsg">stay signed in</label>
+      </div>
+
+      <input type="submit" value="sign in" class="inp-Box submit" />
+
+      <p class="forgot-Psd">forgot password?</p>
+    </form>
+
+    <p class="note">Please log in to listen to your favorite song...</p>
+    <script src="./assets/js/login.js"></script>
+  </body>
+</html>

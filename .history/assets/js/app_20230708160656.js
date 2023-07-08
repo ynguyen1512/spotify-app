@@ -277,7 +277,7 @@ const app = {
 
     // Handle when ended song
     audio.onended = function () {
-      if(_this.isRepeat) {
+      if(_this.repeatBtn) {
         audio.play()
       }
       else  {
