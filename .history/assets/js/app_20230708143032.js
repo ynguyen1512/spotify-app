@@ -180,11 +180,6 @@ const app = {
       audio.src = _this.currentSong.path;
       audio.play();
       playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
-      if(_this.isRandom){
-        _this.playRandomSong()
-      }else {
-        audio.play();
-      }
     };
 
     prevBtn.onclick = function () {
@@ -198,16 +193,34 @@ const app = {
       audio.src = _this.currentSong.path;
       audio.play();
       playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
-      if(_this.isRandom){
-        _this.playRandomSong()
-      }else {
-        audio.play();
-      }
     };
 
     randomBtn.onclick = function(e) {
-      _this.isRandom =!_this.isRandom;
-      randomBtn.classList.toggle("gray-filtered", _this.isRandom)
+      randomBtn.classList.add("active")
+      // _this.isRandom = !_this.isRandom;
+      // _this.isRepeat = false;
+      // randomBtn.classList.toggle("music-control__icon-random--active", _this.isRandom);
+      // if (_this.isRandom) {
+      //     randomBtn.style.color = '#000';
+      // } else {
+      //     randomBtn.style.color = '#fff';
+      // }
+      // repeatBtn.classList.toggle("music-control__icon-repeat--active", _this.isRepeat);
+      
+      // if(_this.isRandom) {
+      //     _this.renderNextSongHeadding(nextSongHeadding,_this.songsData);
+      //     nextSongList.innerHTML = `
+      //         <span class="nextsong__last-item-end">
+      //             Bật chế độ random thì cần gì xem trước <br> bài phát tiếp theo nhể, đỡ phải code :)
+      //         </span>`;
+      // } else {
+      //     if (_this.currentIndex >= _this.songsData.length - 1) {
+      //         $('.nextsong__last-item-end').textContent = 'HẾT BÀI RỒI BẠN ƠI! HAHA';
+      //     } else {
+      //         _this.renderNexrSong();
+      //         _this.scrollToActiveNextSong();
+      //     }
+      // }
   }
 
     // when process of song is changed
@@ -279,17 +292,6 @@ const app = {
       console.log("Hello");
     };
   },
-  playRandomSong: function() {
-    let newIndex;
-    do{
-      newIndex = Math.floor(Math.random() * this.songs.length)
-    }
-    while(newIndex === this.currentIndex)
-
-    this.currentIndex = newIndex;
-    this.loadCurrentSong()
-  }
-  ,
   showPanel(panelIndex, colorCode) {
     tabButtons.forEach(function (node) {
       node.style.backgroundColor = "";

@@ -779,8 +779,7 @@ body {
 }
 
 .random-btn.active {
-  background: #000;
-  /* border-radius: 50%; */
+  color: red;
 }
 
 .repeat-btn,

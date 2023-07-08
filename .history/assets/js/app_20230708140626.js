@@ -20,7 +20,7 @@ const songOption = document.querySelector(".song__option");
 const volumeIcon = document.querySelector(".volume-icon");
 const volumeProgress = document.querySelector("#progress-music");
 const sidebarTabs = document.querySelector(".features__item");
-const randomBtn =  document.querySelector(".random-btn");
+// const randomBtn = $(".random-btn");
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -180,11 +180,6 @@ const app = {
       audio.src = _this.currentSong.path;
       audio.play();
       playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
-      if(_this.isRandom){
-        _this.playRandomSong()
-      }else {
-        audio.play();
-      }
     };
 
     prevBtn.onclick = function () {
@@ -198,17 +193,7 @@ const app = {
       audio.src = _this.currentSong.path;
       audio.play();
       playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
-      if(_this.isRandom){
-        _this.playRandomSong()
-      }else {
-        audio.play();
-      }
     };
-
-    randomBtn.onclick = function(e) {
-      _this.isRandom =!_this.isRandom;
-      randomBtn.classList.toggle("gray-filtered", _this.isRandom)
-  }
 
     // when process of song is changed
     audio.ontimeupdate = function () {
@@ -279,17 +264,6 @@ const app = {
       console.log("Hello");
     };
   },
-  playRandomSong: function() {
-    let newIndex;
-    do{
-      newIndex = Math.floor(Math.random() * this.songs.length)
-    }
-    while(newIndex === this.currentIndex)
-
-    this.currentIndex = newIndex;
-    this.loadCurrentSong()
-  }
-  ,
   showPanel(panelIndex, colorCode) {
     tabButtons.forEach(function (node) {
       node.style.backgroundColor = "";

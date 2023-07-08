@@ -20,7 +20,6 @@ const songOption = document.querySelector(".song__option");
 const volumeIcon = document.querySelector(".volume-icon");
 const volumeProgress = document.querySelector("#progress-music");
 const sidebarTabs = document.querySelector(".features__item");
-const randomBtn =  document.querySelector(".random-btn");
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -35,7 +34,6 @@ const app = {
   currentIndex: 0,
   isMute: false,
   volume: 100,
-  isRandom: false,
   artists: [
     {
       name: "Song Luân",
@@ -145,26 +143,21 @@ const app = {
       if (songNode || e.target.closest(".song__option")) {
         if (songNode) {
           _this.currentIndex = Number(songNode.dataset.index);
-          _this.loadCurrentSong();
-          _this.renderPlaylistContent();
-          _this.renderPlaylist();
-          _this.renderSongName();
-          playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
-          audio.play();
-          // if (window.location.pathname === "/playlist.html") {
-          //   _this.loadCurrentSong();
-          //   _this.renderPlaylistContent();
-          //   _this.renderPlaylist();
-          //   _this.renderSongName();
-          //   playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
-          //   audio.play();
-          // } else {
-          //   _this.loadCurrentSong();
-          //   _this.renderPlaylist();
-          //   _this.renderSongName();
-          //   playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
-          //   audio.play();
-          // }
+
+          if (window.location.pathname === "/playlist.html") {
+            _this.loadCurrentSong();
+            _this.renderPlaylistContent();
+            _this.renderPlaylist();
+            _this.renderSongName();
+            playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
+            audio.play();
+          } else {
+            _this.loadCurrentSong();
+            _this.renderPlaylist();
+            _this.renderSongName();
+            playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
+            audio.play();
+          }
         }
       }
     };
@@ -180,11 +173,6 @@ const app = {
       audio.src = _this.currentSong.path;
       audio.play();
       playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
-      if(_this.isRandom){
-        _this.playRandomSong()
-      }else {
-        audio.play();
-      }
     };
 
     prevBtn.onclick = function () {
@@ -198,17 +186,7 @@ const app = {
       audio.src = _this.currentSong.path;
       audio.play();
       playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
-      if(_this.isRandom){
-        _this.playRandomSong()
-      }else {
-        audio.play();
-      }
     };
-
-    randomBtn.onclick = function(e) {
-      _this.isRandom =!_this.isRandom;
-      randomBtn.classList.toggle("gray-filtered", _this.isRandom)
-  }
 
     // when process of song is changed
     audio.ontimeupdate = function () {
@@ -279,17 +257,6 @@ const app = {
       console.log("Hello");
     };
   },
-  playRandomSong: function() {
-    let newIndex;
-    do{
-      newIndex = Math.floor(Math.random() * this.songs.length)
-    }
-    while(newIndex === this.currentIndex)
-
-    this.currentIndex = newIndex;
-    this.loadCurrentSong()
-  }
-  ,
   showPanel(panelIndex, colorCode) {
     tabButtons.forEach(function (node) {
       node.style.backgroundColor = "";
@@ -469,12 +436,12 @@ const app = {
   },
 
   start: function () {
+    this.defineProperties();
+    this.loadCurrentSong();
     this.renderPlaylistContent();
     this.renderSongName();
     this.renderPlaylist();
-    this.defineProperties();
     this.handleEvents();
-    this.loadCurrentSong();
     
     // this.renderArtistInfo();
     // this.renderPlaylistTable();

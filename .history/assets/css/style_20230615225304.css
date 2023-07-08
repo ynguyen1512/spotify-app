@@ -774,14 +774,6 @@ body {
   margin: 10px 0 0 13px;
   cursor: pointer;
 }
-.random-btn {
-  cursor: pointer;
-}
-
-.random-btn.active {
-  background: #000;
-  /* border-radius: 50%; */
-}
 
 .repeat-btn,
 .next-btn,

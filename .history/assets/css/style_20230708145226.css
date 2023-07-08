@@ -780,7 +780,7 @@ body {
 
 .random-btn.active {
   background: #000;
-  /* border-radius: 50%; */
+  border-radius: 50%;
 }
 
 .repeat-btn,

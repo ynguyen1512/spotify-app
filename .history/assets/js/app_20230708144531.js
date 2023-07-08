@@ -207,7 +207,8 @@ const app = {
 
     randomBtn.onclick = function(e) {
       _this.isRandom =!_this.isRandom;
-      randomBtn.classList.toggle("gray-filtered", _this.isRandom)
+      randomBtn.innerHTML = '<i class="fa-solid fa-rectangles-mixed"></i>';
+      // randomBtn.classList.toggle("active", _this.isRandom)
   }
 
     // when process of song is changed

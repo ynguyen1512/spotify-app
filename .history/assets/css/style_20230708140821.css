@@ -778,11 +778,6 @@ body {
   cursor: pointer;
 }
 
-.random-btn.active {
-  background: #000;
-  /* border-radius: 50%; */
-}
-
 .repeat-btn,
 .next-btn,
 .prev-btn {
