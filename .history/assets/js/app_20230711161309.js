@@ -299,21 +299,10 @@ const app = {
     }
 
     // Handle appear/hide when click a song at personal page
-    songItems.forEach(function (songItem) {
-      songItem.onclick = function () {
-        const prevActiveSongItem = $(".list-songs__item.active");
-        if (prevActiveSongItem) {
-          prevActiveSongItem.classList.remove("active");
-        }
-  
+    songItems.forEach(function(songItem) {
+      songItem.onclick = function() {
         // _this.currentIndex = Number(songItem.dataset.index);
-        // _this.loadCurrentSong();
-        // _this.renderPlaylistContent();
-        // _this.renderPlaylist();
-        // _this.renderSongName();
-        // playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
-        // audio.play();
-  
+      
         songItem.classList.add("active");
         footer.classList.remove("hide");
       };

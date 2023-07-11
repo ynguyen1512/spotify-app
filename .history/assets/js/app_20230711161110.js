@@ -23,7 +23,7 @@ const volumeProgress = document.querySelector("#progress-music");
 // const sidebarTabs = document.querySelector(".features__item");
 const randomBtn =  document.querySelector(".random-btn");
 const repeatBtn = document.querySelector(".repeat-btn");
-const songItems = document.querySelectorAll(".list-songs__item")
+// const songItems = document.querySelectorAll(".list-songs__item")
 const songItem = document.querySelector(".list-songs__item")
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
@@ -299,26 +299,17 @@ const app = {
     }
 
     // Handle appear/hide when click a song at personal page
-    songItems.forEach(function (songItem) {
-      songItem.onclick = function () {
-        const prevActiveSongItem = $(".list-songs__item.active");
-        if (prevActiveSongItem) {
-          prevActiveSongItem.classList.remove("active");
-        }
-  
-        // _this.currentIndex = Number(songItem.dataset.index);
-        // _this.loadCurrentSong();
-        // _this.renderPlaylistContent();
-        // _this.renderPlaylist();
-        // _this.renderSongName();
-        // playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
-        // audio.play();
-  
-        songItem.classList.add("active");
-        footer.classList.remove("hide");
-      };
-    });
-  
+    songItem.onclick = function() {
+      _this.currentIndex = Number(songItem.dataset.index);
+    // _this.loadCurrentSong();
+    // _this.renderPlaylistContent();
+    // _this.renderPlaylist();
+    // _this.renderSongName();
+    // playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
+    // audio.play();
+    songItem.classList.add("active");
+    footer.classList.remove("hide");
+    }
   },
   playRandomSong: function() {
     let newIndex;

@@ -304,7 +304,7 @@ const app = {
         const prevActiveSongItem = $(".list-songs__item.active");
         if (prevActiveSongItem) {
           prevActiveSongItem.classList.remove("active");
-        }
+        // }
   
         // _this.currentIndex = Number(songItem.dataset.index);
         // _this.loadCurrentSong();
