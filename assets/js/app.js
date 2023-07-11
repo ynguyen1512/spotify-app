@@ -16,12 +16,14 @@ const range = document.querySelector(".range");
 const playlistContent = document.querySelector(".playlist-content-render");
 const artistWrapper = document.querySelector(".artist-wrapper");
 const artistInfoBtn = document.querySelector(".artist-info-cover");
+const playlistSongWrapperOfArtist = document.querySelector(".playlist-songs-artist-wrapper")
 const songOption = document.querySelector(".song__option");
 const volumeIcon = document.querySelector(".volume-icon");
 const volumeProgress = document.querySelector("#progress-music");
 const sidebarTabs = document.querySelector(".features__item");
 const randomBtn =  document.querySelector(".random-btn");
 const repeatBtn = document.querySelector(".repeat-btn");
+const songItem = document.querySelector(".list-songs__item")
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
@@ -43,11 +45,35 @@ const app = {
       name: "Song Luân",
       path: "./assets/images/songluan.jpeg",
       listener: "71,133",
+      album: [
+        {
+          songName: "Nếu Em Không Về",
+          songPath: "./assets/musics/neuemkhongve.mp3",
+          songImage: "./assets/images/neuemkhongve.jpg"
+        },
+        {
+          songName: "Đổi Hạnh Phúc Lấy Cô Đơn",
+          songPath: "./assets/musics/doihanhphuclaycodon.mp3",
+          songImage: "./assets/images/doihanhphuclaycodon.jpg"
+        },
+        {
+          songName: "Đẹp Trai Thì Mới Có Nhiều Đứa Yêu",
+          songPath: "./assets/musics/deptraithimoiconhieuduayeu.mp3",
+          songImage: "./assets/images/deptraithimoiconhieuduayeu.jpg"
+        },
+        {
+          songName: "Bên Em Là Anh",
+          songPath: "./assets/musics/benemlaanh.mp3",
+          songImage: "./assets/images/benemlaanh.jpg"
+        }
+      ] 
     },
     {
       name: "Sơn Tùng M-TP",
       path: "./assets/images/sontung.jpg",
       listener: "1,198,648",
+      songPath: "./assets/musics/makingmyway.mp3",
+      songName: "Making My Way"
     },
   ],
   songs: [
@@ -153,20 +179,6 @@ const app = {
           _this.renderSongName();
           playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
           audio.play();
-          // if (window.location.pathname === "/playlist.html") {
-          //   _this.loadCurrentSong();
-          //   _this.renderPlaylistContent();
-          //   _this.renderPlaylist();
-          //   _this.renderSongName();
-          //   playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
-          //   audio.play();
-          // } else {
-          //   _this.loadCurrentSong();
-          //   _this.renderPlaylist();
-          //   _this.renderSongName();
-          //   playBtn.innerHTML = '<i class="fa-solid fa-pause play-btn"></i>';
-          //   audio.play();
-          // }
         }
       }
     };
@@ -285,17 +297,11 @@ const app = {
       }
     }
 
-    // if (window.location.pathname === "/artist.html") {
-    //   artistInfoBtn.onclick = function () {
-    //     // Render artist info and call the function
-    //     _this.renderArtistInfo();
-    //     // ...additional code for rendering the view...
-    //   };
-    // }
-
-    // songOption.onclick = function (e) {
-    //   console.log("Hello");
-    // };
+    // Handle appear/hide when click a song at personal page
+    songItem.onclick = function() {
+      songItem.classList.add("active")
+      footer.classList.remove("hide")
+    }
   },
   playRandomSong: function() {
     let newIndex;
@@ -381,43 +387,34 @@ const app = {
     });
     playlistWrapper.innerHTML = playlistSong.join("");
   },
-  renderPlaylistTable: function () {
-    const html = this.songs.map((song, index) => {
+  renderPlaylistTable: function() {
+    const html = this.artists.map((artist, index) => {
+      let albumHTML = "";
+      
+      if (artist.album) {
+        albumHTML = artist.album.map((album, albumIndex) => {
+          return `
+            <ul class="song-artist-info">
+              <li class="song__number">${albumIndex + 1}</li>
+              <li class="song__artist-img">
+                <img src="${album.songImage}" alt="">
+              </li>
+              <li class="song__name">${album.songName}</li>
+              <li class="song__listener">${artist.listener}</li>
+              <li class="song__duration">3:51</li>
+            </ul>
+          `;
+        }).join("");
+      }
+  
       return index === this.currentIndex
-        ? `
-      <ul class="song-artist-info">
-        <li class="song__number">1</li>
-        <li class="song__artist-img">
-          <img src="./assets/images/doihanhphuclaycodon.jpg" alt="">
-        </li>
-        <li class="song__name">Đổi Hạnh Phúc Lấy Cô Đơn</li>
-        <li class="song__listener">1,330,906</li>
-        <li class="song__duration">3:51</li>
-      </ul>
-      <ul class="song-artist-info">
-        <li class="song__number">2</li>
-        <li class="song__artist-img">
-          <img src="./assets/images/neuemkhongve.jpg" alt="">
-        </li>
-        <li class="song__name">Nếu Em Không Về</li>
-        <li class="song__listener">92,610</li>
-        <li class="song__duration">5:00</li>
-      </ul>
-      <ul class="song-artist-info">
-        <li class="song__number">3</li>
-        <li class="song__artist-img">
-          <img src="./assets/images/buocdenbenem.jpg" alt="">
-        </li>
-        <li class="song__name">Bước Đến Bên Em</li>
-        <li class="song__listener">24,850</li>
-        <li class="song__duration">3:39</li>
-      </ul>
-      <p class="see-more">See more</p>
-      `
+        ? albumHTML
         : "";
     });
-    playlistSongContainer.innerHTML = html.join("");
+  
+    playlistSongWrapperOfArtist.innerHTML = html.join("");
   },
+  
   renderSongName: function () {
     const html = this.songs.map((song, index) => {
       return index === this.currentIndex
@@ -487,6 +484,8 @@ const app = {
   },
 
   start: function () {
+    this.renderArtistInfo();
+    this.renderPlaylistTable();
     this.renderPlaylistContent();
     this.renderSongName();
     this.renderPlaylist();
@@ -494,8 +493,6 @@ const app = {
     this.handleEvents();
     this.loadCurrentSong();
     
-    // this.renderArtistInfo();
-    // this.renderPlaylistTable();
   },
 };
 

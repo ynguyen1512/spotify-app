@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Spotify</title>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline';"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">
+        <div class="menu">
+          <ul class="menu-list">
+            <li class="menu-list__item">
+              <a href="./index.html" class="menu-btn">
+                <img
+                  src="./assets/icons/home.svg"
+                  alt=""
+                  class="gray-filtered menu__icon"
+                />
+                <span class="menu__heading active">Home</span>
+              </a>
+            </li>
+            <li class="menu-list__item">
+              <a href="#" class="menu-btn">
+                <img
+                  src="./assets/icons/Search.svg"
+                  alt=""
+                  class="gray-filtered menu__icon"
+                />
+                <span class="menu__heading">Search</span>
+              </a>
+            </li>
+
+            <div style="height: 20px"></div>
+          </ul>
+        </div>
+
+        <div style="height: 8px"></div>
+        <div class="menu playlists" >
+          <ul class="menu-list">
+            <li class="menu-list__item">
+              <a href="#" class="menu-btn">
+                <img
+                  src="./assets/icons/YourLibrary.svg"
+                  alt=""
+                  class="gray-filtered"
+                />
+                <span class="menu__heading">Your Library</span>
+              </a>
+            </li>
+            <li class="features menu-list__item" >
+              <div class="features__item active">Personal</div>
+              <div class="features__item">Playlist</div>
+              <div class="features__item">Artist</div>
+              <div class="features__item">Podcasts & Shows</div>
+            </li>
+            <li class="songs-current-cover menu-list__item">
+              <img
+                class="song-img"
+                src="./assets/images/dieforyou.jpg"
+                alt=""
+              />
+              <div class="song-info">
+                <p class="song-title">Die For You (Remix)</p>
+                <p class="song-desc">Album · The Weeknd</p>
+              </div>
+            </li>
+            <li class="songs-current-cover menu-list__item">
+              <img
+                class="song-img"
+                src="./assets/images/neuemkhongve.jpg"
+                alt=""
+              />
+              <div class="song-info">
+                <p class="song-title">Nếu Em Không Về</p>
+                <p class="song-desc">Album · Song Luân</p>
+              </div>
+            </li>
+            <li class="songs-current-cover menu-list__item">
+              <img
+                class="song-img"
+                src="./assets/images/aldoemxuithoi.jpg"
+                alt=""
+              />
+              <div class="song-info">
+                <p class="song-title">Là Do Em Xui Thôi</p>
+                <p class="song-desc">Khói, Sofia, Chau Dang Khoa</p>
+              </div>
+            </li>
+            <li class="songs-current-cover menu-list__item">
+              <img
+                class="song-img"
+                src="./assets/images/emkhongkhoc.jpg"
+                alt=""
+              />
+              <div class="song-info">
+                <p class="song-title">Em Không Khóc (feat. Vũ Phụng Tiên)</p>
+                <p class="song-desc">buitruonglinh, Vũ Phụng Tiên</p>
+              </div>
+            </li>
+            <li class="songs-current-cover menu-list__item">
+              <img
+                class="song-img"
+                src="./assets/images/anhsaovabautroi.jpg"
+                alt=""
+              />
+              <div class="song-info">
+                <p class="song-title">Ánh Sao Và Bầu Trời</p>
+                <p class="song-desc">T.R.I</p>
+              </div>
+            </li>
+            <li class="songs-current-cover menu-list__item">
+              <img
+                class="song-img"
+                src="./assets/images/bantinhcadautien.jpg"
+                alt=""
+              />
+              <div class="song-info">
+                <p class="song-title">Bản Tình Ca Đầu Tiên</p>
+                <p class="song-desc">Anh Tú</p>
+              </div>
+            </li>
+            <li class="songs-current-cover menu-list__item">
+              <img
+                class="song-img"
+                src="./assets/images/makingmyway.jpg"
+                alt=""
+              />
+              <div class="song-info">
+                <p class="song-title">Making My Way</p>
+                <p class="song-desc">Sơn Tùng M-TP</p>
+              </div>
+            </li>
+            <li class="songs-current-cover menu-list__item">
+              <img
+                class="song-img"
+                src="./assets/images/daunhatlalangim.jpg"
+                alt=""
+              />
+              <div class="song-info">
+                <p class="song-title">Đau Nhất Là Lặng Im</p>
+                <p class="song-desc">ERIK</p>
+              </div>
+            </li>
+          </div>
+
+        </div>
+
+        <!-- <div class="current-song-cover">
+          <img src="./images/song-cover.jpeg" alt="" />
+        </div> -->
+        <!-- RIGHT -->
+      <div class="right">
+        
+
+        <!-- Tab content -->
+        <div class="tab-content">
+          <div class="tab-pane active">
+            <div class="playlist-header active">
+              <div class="playlist-top">
+                <div class="playlist-arrows">
+                  <div class="arrow-container">
+                    <img src="./assets/icons/LeftArrow.svg" alt="" />
+                  </div>
+                  <div class="arrow-container">
+                    <img src="./assets/icons/RightArrow.svg" alt="" />
+                  </div>
+                </div>
+    
+                <div class="playlist-top-email">
+                  <div class="arrow-container">
+                    <img src="./assets/icons/Profile.svg" alt="" />
+                  </div>
+    
+                  <!-- <span> JasonNguyenFGW</span> -->
+                  <div class="login-action">
+                    <a href="./login.html">
+                      <button class="login-btn">
+                        <a href="./login.html" style="text-decoration: none; cursor: pointer; ;color: aliceblue;">Logout</a>
+                      </button>
+                    </a>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="playlist-content js__container-panes">
+                <h1 class="playlist__greeting">Welcome to my space</h1>
+                <div class="playlist-row">
+                  <ul class="playlist-row__item">
+                    <li>
+                      <div class="playlist-item-cover">
+                        <img
+                          src="./assets/images/dieforyou.jpg"
+                          alt=""
+                          class="playlist-item__img"
+                        />
+                        <p class="playlist-item__title">Die For You</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="playlist-item-cover">
+                        <img
+                          src="./assets/images/daunhatlalangim.jpg"
+                          alt=""
+                          class="playlist-item__img"
+                        />
+                        <p class="playlist-item__title">Đau Nhất Là Lặng Im</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="playlist-item-cover">
+                        <img
+                          src="./assets/images/makingmyway.jpg"
+                          alt=""
+                          class="playlist-item__img"
+                        />
+                        <p class="playlist-item__title">Making My Way</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="playlist-row">
+                  <ul class="playlist-row__item">
+                    <li>
+                      <div class="playlist-item-cover">
+                        <img
+                          src="./assets/images/emkhongkhoc.jpg"
+                          alt=""
+                          class="playlist-item__img"
+                        />
+                        <p class="playlist-item__title">Em Không Khóc</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="playlist-item-cover">
+                        <img
+                          src="./assets/images/aldoemxuithoi.jpg"
+                          alt=""
+                          class="playlist-item__img"
+                        />
+                        <p class="playlist-item__title">Là Do Em Xui Thôi</p>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="playlist-item-cover">
+                        <img
+                          src="./assets/images/neuemkhongve.jpg"
+                          alt=""
+                          class="playlist-item__img"
+                        />
+                        <p class="playlist-item__title">Nếu Em Không Về</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <div class="playlist-songs-container">
+              <div class="playlist-buttons">
+                <div class="playlist-buttons-left">
+                  <div class="playlist-buttons-resume-pause">
+                    <img src="./assets/icons/Pause.svg" alt="" />
+                  </div>
+                  <div class="playlist-buttons-like">
+                    <img src="./assets/icons/FiiledLike.svg" alt="" />
+                  </div>
+                  <div class="playlist-buttons-download">
+                    <img src="./assets/icons/Download.svg" alt="" />
+                  </div>
+                  <div class="playlist-buttons-three-dot">
+                    <img src="./assets/icons/ThreeDots.svg" alt="" />
+                  </div>
+                </div>
+                <div class="playlist-buttons-right">
+                  <div class="playlist-buttons-search">
+                    <img src="./assets/icons/Search.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <h1 class="playlist-song-title">Made For Jason</h1>
+              <!-- Audio -->
+              <audio id="song" src=""></audio>
+              
+              
+              <!-- Playlist Song -->
+              <div class="list-songs-wrapper js__container-panes">
+                <div class="list-songs__item">
+                  <img src="./assets/images/contimkhongdoithay.jpg" alt="" class="list-song__img">
+                  <div class="list-song__title">Con Tim Không Đổi Thay</div>
+                  <div class="list-song__desc">Dee Trần</div>
+                </div>
+                <div class="list-songs__item">
+                  <img src="./assets/images/suytnuathi.jpg" alt="" class="list-song__img">
+                  <div class="list-song__title">Suýt Nữa Thì</div>
+                  <div class="list-song__desc">Andiez</div>
+                </div>
+                <div class="list-songs__item">
+                  <img src="./assets/images/chieuhomay.jpg" alt="" class="list-song__img">
+                  <div class="list-song__title">Chiều Hôm Ấy</div>
+                  <div class="list-song__desc">Jaykii</div>
+                </div>
+                <div class="list-songs__item">
+                  <img src="./assets/images/buocquamuacodon.jpg" alt="" class="list-song__img">
+                  <div class="list-song__title">Bước qua mùa cô đơn</div>
+                  <div class="list-song__desc">Vũ</div>
+                </div>
+                <div class="list-songs__item">
+                  <img src="./assets/images/causeiloveu.jpg" alt="" class="list-song__img">
+                  <div class="list-song__title">Cause I Love You</div>
+                  <div class="list-song__desc">Noo Phước Thịnh</div>
+                </div>
+              </div>
+    
+              <h1 class="playlist-song-title">Try something else</h1>
+    
+              <div class="list-songs-wrapper js__container-panes">
+                <div class="list-songs__item">
+                  <img src="./assets/images/yeuthuongngaydo.jpg" alt="" class="list-song__img">
+                  <div class="list-song__title">Yêu Thương Ngày Đó </div>
+                  <div class="list-song__desc">Soobin Hoàng Sơn</div>
+                </div>
+                <div class="list-songs__item">
+                  <img src="./assets/images/songluan.jpeg" alt="" class="list-song__img">
+                  <div class="list-song__title">New Title</div>
+                  <div class="list-song__desc">New description</div>
+                </div>
+                <div class="list-songs__item">
+                  <img src="./assets/images/songluan.jpeg" alt="" class="list-song__img">
+                  <div class="list-song__title">New Title</div>
+                  <div class="list-song__desc">New description</div>
+                </div>
+                <div class="list-songs__item">
+                  <img src="./assets/images/songluan.jpeg" alt="" class="list-song__img">
+                  <div class="list-song__title">New Title</div>
+                  <div class="list-song__desc">New description</div>
+                </div>
+                <div class="list-songs__item">
+                  <img src="./assets/images/songluan.jpeg" alt="" class="list-song__img">
+                  <div class="list-song__title">New Title</div>
+                  <div class="list-song__desc">New description</div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <div class="tab-pane ">
+            <div class="right" style="margin-top: 0px;">
+              <div class="playlist-header">
+                <div class="playlist-top">
+                  <div class="playlist-arrows">
+                    <div class="arrow-container">
+                      <img src="./assets/icons/LeftArrow.svg" alt="" />
+                    </div>
+                    <div class="arrow-container">
+                      <img src="./assets/icons/RightArrow.svg" alt="" />
+                    </div>
+                  </div>
+                  <div class="playlist-top-email">
+                    <div class="arrow-container">
+                      <img src="./assets/icons/Profile.svg" alt="" />
+                    </div>
+                    <span> JasonNguyenFGW</span>
+                  </div>
+                </div>
+                <!-- Render View Son Tung -->
+                <div class="playlist-content-render"></div>
+              </div>
+              <audio id="song" src=""></audio>
+              <!-- <div class="playlist-songs-container"></div> -->
+              <div class="playlist-song-wrapper"></div>
+              <p class="see-more">See more</p>
+            </div>
+            <!-- Footer -->
+            <div class="footer-player">
+              <div class="footer-player-left">
+                <div class="footer-player-left-song"></div>
+                <div class="footer-player-left-like">
+                  <img
+                    src="assets/icons/FiiledLike.svg"
+                    alt=""
+                    class="spotify-color"
+                    style="height: 18px; width: 18px"
+                  />
+                </div>
+              </div>
+              <div class="footer-player-middle">
+                <div class="footer-player-middle-buttons">
+                  <img
+                    src="./assets/icons/Shuffle.svg"
+                    alt=""
+                    class="gray-filtered random-btn"
+                  />
+                  <img
+                    src="./assets/icons/Previous.svg"
+                    alt=""
+                    class="gray-filtered prev-btn"
+                  />
+                  <span class="pause-button">
+                    <img src="./assets/icons/Pause.svg" alt="" />
+                  </span>
+                  <img
+                    src="./assets/icons/Next.svg"
+                    alt=""
+                    class="gray-filtered next-btn"
+                  />
+                  <img src="./assets/icons/Repeat.svg" alt="" class="repeat-btn" />
+                </div>
+                <div class="footer-player-middle-slider">
+                  <div class="player-duration">1:33</div>
+                  <div class="player-slider">
+                    <input type="range" min="0" max="100" value="0" class="range" />
+                  </div>
+                  <div class="player-remaining">4:34</div>
+                </div>
+              </div>
+              <div class="footer-player-right">
+                <div class="footer-player-right-buttons">
+                  <img src="./assets/icons/Lyrics.svg" alt="" />
+                  <img src="./assets/icons/Queue.svg" class="filtered-img" alt="" />
+                  <img
+                    src="./assets/icons/Connect to a device.svg"
+                    class="filtered-img"
+                    alt=""
+                  />
+                  <img
+                    src="./assets/icons/Volume.svg"
+                    class="filtered-img volume-icon"
+                    alt=""
+                  />
+                  <div class="volume-control" style="margin-right: 20px; width: 200px">
+                    <input
+                      id="progress-music"
+                      type="range"
+                      min="1"
+                      max="100"
+                      value="30"
+                      style="width: 75px; position: relative; top: -5px"
+                    />
+                  </div>
+                  <img
+                    src="./assets/icons/Full screen.svg"
+                    class="filtered-img"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane">
+            <div class="playlist-header">
+              <div class="playlist-top">
+                <div class="playlist-arrows">
+                  <div class="arrow-container">
+                    <img src="./assets/icons/LeftArrow.svg" alt="" />
+                  </div>
+                  <div class="arrow-container">
+                    <img src="./assets/icons/RightArrow.svg" alt="" />
+                  </div>
+                </div>
+    
+                <div class="playlist-top-email">
+                  <div class="arrow-container">
+                    <img src="./assets/icons/Profile.svg" alt="" />
+                  </div>
+    
+                  <!-- <span> JasonNguyenFGW</span> -->
+                  <div class="login-action">
+                    <a href="./login.html">
+                      <button class="login-btn">
+                        <a href="./login.html" style="text-decoration: none; cursor: pointer; ;color: aliceblue;">Logout</a>
+                      </button>
+                    </a>
+                  </div>
+                </div>
+                
+              </div>
+              <div class="artist-wrapper">
+              </div>
+            </div>
+    
+            <div class="playlist-songs-container">
+              <div class="playlist-buttons">
+                <div class="playlist-buttons-left">
+                  <div class="playlist-buttons-resume-pause">
+                    <img src="./assets/icons/Pause.svg" alt="" />
+                  </div>
+                  <div class="playlist-buttons-following">
+                      <p>Following</p>
+                    </div>
+                  <div class="playlist-buttons-three-dot">
+                    <img src="./assets/icons/ThreeDots.svg" alt="" />
+                  </div>
+                </div>
+                <div class="playlist-buttons-right">
+                  <div class="playlist-buttons-search">
+                    <img src="./assets/icons/Search.svg" alt="" />
+                  </div>
+                </div>
+              </div>
+              <h1 class="playlist-song-title">Popular</h1>
+              <!-- Audio -->
+              <audio id="song" src=""></audio>
+              
+              
+              <!-- Playlist Song -->
+              <div class="playlist-songs-artist-wrapper">
+                  
+                  <p class="see-more">See more</p>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane">
+            <h2>Ember</h2>
+            <p>Ember.js is a productive, battle-tested JavaScript framework for building modern web applications. It includes everything you need to build rich UIs that work on any device.</p>
+          </div>
+          <div class="tab-pane">
+            <h2>Vue.js</h2>
+            <p>Vue (pronounced /vjuː/, like view) is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. </p>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+      </div>
+    </div>
+  </body>
+  <script src="./assets/js/app.js"></script>
+</html>

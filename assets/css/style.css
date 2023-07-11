@@ -639,6 +639,10 @@ body {
   letter-spacing: 0.5px;
 }
 
+.footer-player.hide {
+  display: none;
+}
+
 .song-name,
 .footer-player-left-song-name {
   font-weight: 400;
@@ -675,6 +679,10 @@ body {
 .list-songs__item:hover {
   background: #242424;
   cursor: pointer;
+}
+
+.list-songs__item.active {
+  background: #062e14;
 }
 
 .list-songs__item:first-child {

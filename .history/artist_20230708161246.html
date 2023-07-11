@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Artist</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/reset.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon/favicon-16x16.png"
+    />
+
+    <!-- Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body>
+    <div class="container">
+        <div class="left">
+          <div class="menu">
+            <ul class="menu-list">
+              <li class="menu-list__item">
+                <a href="./index.html" class="menu-btn">
+                  <img
+                    src="./assets/icons/Home.svg"
+                    alt=""
+                    class="gray-filtered menu__icon"
+                  />
+                  <span class="menu__heading active">Home</span>
+                </a>
+              </li>
+              <li class="menu-list__item">
+                <a href="#" class="menu-btn">
+                  <img
+                    src="./assets/icons/Search.svg"
+                    alt=""
+                    class="gray-filtered menu__icon"
+                  />
+                  <span class="menu__heading">Search</span>
+                </a>
+              </li>
+  
+              <div style="height: 20px"></div>
+            </ul>
+          </div>
+  
+          <div style="height: 8px"></div>
+          <div class="menu playlists" style="height: 550px">
+            <ul class="menu-list">
+              <li class="menu-list__item">
+                <a href="#" class="menu-btn">
+                  <img
+                    src="./assets/icons/YourLibrary.svg"
+                    alt=""
+                    class="gray-filtered"
+                  />
+                  <span class="menu__heading">Your Library</span>
+                </a>
+              </li>
+              <li class="features menu-list__item">
+                <a href="./artist.html" class="features__item">Artist</a>
+              </li>
+              <li class="songs-current-cover menu-list__item artist-info-cover">
+                <img
+                  class="song-img"
+                  src="./assets/images/songluan.jpeg"
+                  alt=""
+                />
+                <div class="song-info">
+                  <p class="song-title">Song Luân</p>
+                  <p class="song-desc">Artist</p>
+                </div>
+              </li>
+              <li class="songs-current-cover menu-list__item artist-info-cover">
+                <img
+                  class="song-img"
+                  src="./assets/images/songtung.jpg"
+                  alt=""
+                />
+                <div class="song-info">
+                  <p class="song-title">Sơn Tùng M-TP</p>
+                  <p class="song-desc">Artist</p>
+                </div>
+              </li>
+             
+            </ul>
+          </div>
+  
+          <!-- <div class="current-song-cover">
+            <img src="./images/song-cover.jpeg" alt="" />
+          </div> -->
+        </div>
+        <div class="right">
+          <div class="playlist-header">
+            <div class="playlist-top">
+              <div class="playlist-arrows">
+                <div class="arrow-container">
+                  <img src="./assets/icons/LeftArrow.svg" alt="" />
+                </div>
+                <div class="arrow-container">
+                  <img src="./assets/icons/RightArrow.svg" alt="" />
+                </div>
+              </div>
+  
+              <div class="playlist-top-email">
+                <div class="arrow-container">
+                  <img src="./assets/icons/Profile.svg" alt="" />
+                </div>
+  
+                <!-- <span> JasonNguyenFGW</span> -->
+                <div class="login-action">
+                  <a href="./login.html">
+                    <button class="login-btn">
+                      <a href="./login.html" style="text-decoration: none; cursor: pointer; ;color: aliceblue;">Logout</a>
+                    </button>
+                  </a>
+                </div>
+              </div>
+              
+            </div>
+            <div class="artist-wrapper">
+            </div>
+          </div>
+  
+          <div class="playlist-songs-container">
+            <div class="playlist-buttons">
+              <div class="playlist-buttons-left">
+                <div class="playlist-buttons-resume-pause">
+                  <img src="./assets/icons/Pause.svg" alt="" />
+                </div>
+                <div class="playlist-buttons-following">
+                    <p>Following</p>
+                  </div>
+                <div class="playlist-buttons-three-dot">
+                  <img src="./assets/icons/ThreeDots.svg" alt="" />
+                </div>
+              </div>
+              <div class="playlist-buttons-right">
+                <div class="playlist-buttons-search">
+                  <img src="./assets/icons/Search.svg" alt="" />
+                </div>
+              </div>
+            </div>
+            <h1 class="playlist-song-title">Popular</h1>
+            <!-- Audio -->
+            <audio id="song" src=""></audio>
+            
+            
+            <!-- Playlist Song -->
+            <div class="playlist-songs-artist-wrapper">
+                
+                <p class="see-more">See more</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+  </body>
+  <script src="./app.js"></script>
+</html>
